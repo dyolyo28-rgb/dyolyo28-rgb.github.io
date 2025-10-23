@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Grind</title>
+    
+    <style>
+        /* CSS Reset 및 기본 설정 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            /* ⭐️ Body padding-top을 추가해서 fixed 헤더 아래 공간 확보 */
+            padding-top: 60px; 
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+
+            background-image:url(메인.jpg);
+        background-size: cover;
+        margin: 0;
+        }
+
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 헤더*/
+
+       header {
+            background-color: #2A120B; 
+            color: #fff;
+            padding: 15px 0; 
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1300px; 
+            margin: 0 auto;
+            padding: 0 15px; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a{
+            font-size: 24px; 
+            font-weight: normal;
+            font-family: 'PP Editorial New', serif; 
+            letter-spacing: 1px;
+            color: #D4CABE; 
+        }
+
+        .main-nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        .main-nav a {
+            color: #9D8A7C; 
+            font-size: 15.2px; 
+            transition: color 0.3s ease;
+            text-transform: capitalize;
+            font-family: 'Pretendard', sans-serif;
+            font-weight: 700; 
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active { 
+            color: #fff; 
+        }
+
+     
+
+        .hero-section {
+          
+            min-height: 100vh;
+            width: 100%;
+
+            position: relative; 
+
+            background-image: url('메인.png');
+          
+            background-size: cover; 
+            background-repeat: no-repeat;
+            
+            background-position: center 15%; 
+        }
+        
+        .main-text {
+            position: absolute; 
+            
+            top: 88%; 
+            left: 50%;
+            transform: translate(-50%, -50%); 
+            
+            color: #523F31;
+            font-size: 16px; 
+            line-height: 14px;
+            max-width: 600px;
+            text-align: center;
+            font-family: 'pretendard', sans-serif; 
+            white-space: pre-line;
+            z-index: 2; 
+        }
+        
+        /* 푸터 */
+footer {
+            background-color: #2A120B; 
+            color: #fff;
+            padding: 60px 0; 
+        }
+
+        footer .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 5px; /* 헤더와 동일하게 */
+            display: block; 
+        }
+        
+        .footer-top-flex {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            margin-bottom: 30px; 
+        }
+        
+        footer .logo {
+            font-size: 32px; 
+            margin-bottom: 0;
+            color: #9D8A7C; 
+            font-family: 'PP Editorial New', serif;
+            font-weight: normal;
+        }
+        
+        footer .main-nav ul {
+            display: flex;
+            gap: 25px;
+        }
+        
+        footer .main-nav a {
+            color: #9D8A7C;
+            font-size: 15.2px; 
+            transition: color 0.3s ease;
+            text-transform: capitalize;
+            font-family: 'Pretendard', sans-serif;
+            font-weight: 400; 
+        }
+
+        footer .main-nav a:hover {
+            color: #fff;
+            font-weight: 700; 
+        }
+        
+        footer .footer-content p {
+            font-size: 14.4px;
+            line-height: 1.8;
+            color: #9D8A7C;
+            max-width: 600px;
+            text-align: left;
+            font-family: 'Pretendard', sans-serif;
+            font-weight: 400; 
+        }
+
+        footer .main-nav li {
+        color: #9D8A7C;
+        font-size: 15.2px;
+        font-family: 'Pretendard', sans-serif;
+        font-weight: 400;
+         }
+
+    </style>
+</head>
+<body>
+
+   <header>
+        <div class="container">
+            <h1 class="logo"><a href="index.html">The Daily Grind</a></h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="origin.html">Origin</a></li>
+                    <li><a href="roast-level.html">Roast Level</a></li> 
+                    <li><a href="flavor-note.html">Flavor Note</a></li>
+                    <li><a href="bean-column.html">Bean Column</a></li>
+                    <li><a href="brewing-guide.html">Brewing Guide</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="hero-section">
+        <p class="main-text"><b>The Daily Grind: Explore, Brew, Discover<br>
+            Find Your Perfect Balance of Flavor and Technique</b></p>
+    </main>
+
+        <footer>
+        <div class="container">
+            <div class="footer-top-flex">
+                <h1 class="logo">The Daily Grind</h1>
+                <nav class="main-nav">
+                    <ul>
+                        <li>© 2025 The Daily Grind. All rights reserved.</li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="footer-content">
+                <p>The Daily Grind는 전 세계 커피 원두의 원산지별 특징, 로스팅 단계별 추출 가이드, <br>
+                    그리고 풍미에 대한 깊이 있는 정보를 제공합니다. 당신의 완벽한 한 잔을 위한 지식을 발견하세요.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
