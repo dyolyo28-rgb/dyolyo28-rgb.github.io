@@ -15,16 +15,15 @@
         }
 
         body {
-            /* ⭐️ Body padding-top을 추가해서 fixed 헤더 아래 공간 확보 */
-            padding-top: 60px; 
-            background-color: #fff;
-            color: #333;
-            line-height: 1.6;
-
-            background-image:url(메인.jpg);
-        background-size: cover;
-        margin: 0;
-        }
+   
+    background-image: url('메인.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center center; 
+    background-attachment: fixed; 
+    min-height: 100vh; 
+    margin: 0; 
+}
 
         
         a {
@@ -41,7 +40,7 @@
        header {
             background-color: #2A120B; 
             color: #fff;
-            padding: 15px 0; 
+            padding: 22.8px 0; 
             position: fixed;
             width: 100%;
             top: 0;
@@ -109,7 +108,7 @@
             left: 50%;
             transform: translate(-50%, -50%); 
             
-            color: #523F31;
+            color: #bebebe;
             font-size: 16px; 
             line-height: 14px;
             max-width: 600px;
@@ -188,7 +187,7 @@ footer {
 </head>
 <body>
 
-   <header>
+    <header>
         <div class="container">
             <h1 class="logo"><a href="index.html">The Daily Grind</a></h1>
             <nav class="main-nav">
@@ -203,9 +202,9 @@ footer {
         </div>
     </header>
 
+
     <main class="hero-section">
-        <p class="main-text"><b>The Daily Grind: Explore, Brew, Discover<br>
-            Find Your Perfect Balance of Flavor and Technique</b></p>
+        <p class="main-text"><b>Explore all things coffee, from bean to brew</b></p>
     </main>
 
         <footer>
