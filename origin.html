@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Grind - Origin</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            padding-top: 60px; 
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+            background-image: url(빨강노랑.png);
+            background-size: cover;
+            margin: 0;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        header {
+            background-color: #2A120B; 
+            color: #fff;
+            padding: 15px 0; 
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1300px; 
+            margin: 0 auto;
+            padding: 0 15px; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            font-size: 24px; 
+            font-weight: normal;
+            font-family: 'PP Editorial New', serif; 
+            letter-spacing: 1px;
+            color: #D4CABE; 
+        }
+
+        .main-nav ul { display: flex; gap: 25px; }
+
+        .main-nav a {
+            color: #9D8A7C; 
+            font-size: 15.2px; 
+            transition: color 0.3s ease;
+            text-transform: capitalize;
+            font-family: 'Pretendard', sans-serif;
+            font-weight: 700; 
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active { color: #fff; }
+
+        .page-content {
+            padding: 50px 0; 
+            min-height: 50vh; 
+        }
+        
+        .page-content .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 5px;
+            display: block; 
+        }
+
+        .page-intro {
+            text-align: center; 
+            margin-bottom: 60px; 
+        }
+
+        .page-intro h1 {
+            font-size: 72px; 
+            font-weight: 700;
+            font-family: 'Pretendard', sans-serif;
+            margin-bottom: 15px;
+            color: #222; 
+        }
+
+        .page-intro .intro-text {
+            font-size: 16px;
+            color: #2A120B; 
+            line-height: 1.5; 
+            font-weight: 400;
+            font-family: 'Pretendard', sans-serif; 
+            max-width: 650px; 
+            margin: 0 auto; 
+        }
+
+        .origin-table {
+            width: 100%; 
+            border-collapse: collapse; 
+        }
+
+        .origin-table td {
+            width: 33.33%; 
+            padding: 0 10px 40px 10px; 
+            vertical-align: top; 
+            text-align: left; 
+        }
+
+        /* 이미지 스타일 */
+        .img-box {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 8px; 
+            margin-bottom: 15px;
+        }
+
+        .img-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .origin-table .region {
+            font-size: 13px;
+            color: #888;
+            font-weight: normal;
+            margin-bottom: 0; 
+            font-family: 'Pretendard', sans-serif; 
+        }
+
+        .origin-table .bean-name {
+            font-size: 20px;
+            color: #222;
+            font-weight: bold;
+            margin-top: 4px;
+            font-family: 'Pretendard', sans-serif; 
+        }
+
+        footer {
+            background-color: #2A120B; 
+            color: #fff;
+            padding: 60px 0; 
+        }
+
+        footer .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 5px;
+            display: block; 
+        }
+
+        .footer-top-flex {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            margin-bottom: 30px; 
+        }
+
+        footer .logo {
+            font-size: 32px;
+            margin-bottom: 0;
+            color: #9D8A7C; 
+            font-family: 'PP Editorial New', serif;
+            font-weight: normal;
+        }
+
+        footer .main-nav ul { display: flex; gap: 25px; }
+
+        footer .main-nav a {
+            color: #9D8A7C;
+            font-size: 15.2px; 
+            transition: color 0.3s ease;
+            text-transform: capitalize;
+            font-weight: normal; 
+        }
+
+        footer p {
+            font-size: 14.4px;
+            line-height: 1.8;
+            color: #9D8A7C;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        footer .main-nav li {
+            color: #9D8A7C;
+            font-size: 15.2px;
+            font-family: 'Pretendard', sans-serif;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo"><a href="index.html">The Daily Grind</a></h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="origin.html" class="active">Origin</a></li>
+                    <li><a href="roast-level.html">Roast Level</a></li> 
+                    <li><a href="flavor-note.html">Flavor Note</a></li>
+                    <li><a href="bean-column.html">Bean Column</a></li>
+                    <li><a href="brewing-guide.html">Brewing Guide</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="container">
+            <div class="page-intro">
+                <h1>Origin</h1>
+                <p class="intro-text">원두가 자라는 곳에서 여정은 시작됩니다.<br>세계 각지의 독특한 커피 맛에 영향을 미치는 토양, 고도, 기후의 심오한 영향을 알아보세요.</p>
+            </div>
+
+            <table class="origin-table">
+                <tr>
+                    <td>
+                        <div class="img-box"><img src="에티오피아.jpg" alt="에티오피아 원두"></div>
+                        <p class="region">에티오피아</p>
+                        <h3 class="bean-name">예가체프 꽃향</h3>
+                    </td>
+                    <td>
+                        <div class="img-box"><img src="콜롬비아.jpg" alt="콜롬비아 원두"></div>
+                        <p class="region">콜롬비아</p>
+                        <h3 class="bean-name">수프리모</h3>
+                    </td>
+                    <td>
+                        <div class="img-box"><img src="브라질.jpg" alt="브라질 원두"></div>
+                        <p class="region">브라질</p>
+                        <h3 class="bean-name">산토스</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="img-box"><img src="과테말라.jpg" alt="과테말라 원두"></div>
+                        <p class="region">과테말라</p>
+                        <h3 class="bean-name">안티구아</h3>
+                    </td>
+                    <td>
+                        <div class="img-box"><img src="케냐.jpg" alt="케냐 원두"></div>
+                        <p class="region">케냐</p>
+                        <h3 class="bean-name">AA</h3>
+                    </td>
+                    <td>
+                        <div class="img-box"><img src="코스타리카.jpg" alt="코스타리카 원두"></div>
+                        <p class="region">코스타리카</p>
+                        <h3 class="bean-name">따라주</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="img-box"><img src="인도네시아.jpg" alt="인도네시아 원두"></div>
+                        <p class="region">인도네시아</p>
+                        <h3 class="bean-name">만델링</h3>
+                    </td>
+                    <td>
+                        <div class="img-box"><img src="자메이카.jpg" alt="자메이카 원두"></div>
+                        <p class="region">자메이카</p>
+                        <h3 class="bean-name">블루마운틴</h3>
+                    </td>
+                    <td>
+                        <div class="img-box"><img src="예멘.jpg" alt="예멘 원두"></div>
+                        <p class="region">예멘</p>
+                        <h3 class="bean-name">모카 마타리</h3>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top-flex">
+                <h1 class="logo">The Daily Grind</h1>
+                <nav class="main-nav">
+                    <ul>
+                        <li>© 2025 The Daily Grind. All rights reserved.</li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-content">
+                <p>The Daily Grind는 전 세계 커피 원두의 원산지별 특징, 로스팅 단계별 추출 가이드, <br>
+                    그리고 풍미에 대한 깊이 있는 정보를 제공합니다. 당신의 완벽한 한 잔을 위한 지식을 발견하세요.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

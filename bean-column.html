@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Grind - Bean Column</title>
+    
+    <style>
+        /* 기본 설정 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* 👇 기본 폰트 Pretendard */
+            font-family: 'Pretendard', 'Arial', sans-serif; 
+        }
+
+        body {
+            padding-top: 60px; 
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+
+            background-image:url(빨강.png);
+        background-size: cover;
+        margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 헤더 */
+
+       header {
+            background-color: #2A120B; 
+            color: #fff;
+            padding: 15px 0; 
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1300px; 
+            margin: 0 auto;
+            padding: 0 15px; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a{
+            font-size: 24px; 
+            font-weight: normal;
+            font-family: 'PP Editorial New', serif; 
+            letter-spacing: 1px;
+            color: #D4CABE; 
+        }
+
+        .main-nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        .main-nav a {
+            color: #9D8A7C; 
+            font-size: 15.2px; 
+            transition: color 0.3s ease;
+            text-transform: capitalize;
+            font-family: 'Pretendard', sans-serif;
+            font-weight: 700; 
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active { 
+            color: #fff; 
+        }
+
+        /* 메인 콘텐츠 */
+        .page-content {
+            padding: 50px 0; 
+            min-height: 50vh; 
+        }
+        
+        .page-content .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 5px;
+            display: block; 
+        }
+        
+        /* Column 페이지 전용 */
+        .page-intro {
+            text-align: center; 
+            margin-bottom: 60px; 
+        }
+
+        /* 👇 페이지 제목 스타일 수정 */
+        .page-intro h1 {
+             font-size: 72px; 
+             font-weight: 700; /* Bold */
+             font-family: 'Pretendard', sans-serif; /* Pretendard */
+             margin-bottom: 15px;
+             color: #222; /* 제목 색상 유지 */
+        }
+        
+        .page-intro .divider {
+            color: #9D8A7C;
+            margin-bottom: 15px;
+            font-weight: lighter;
+            font-size: 20px;
+        }
+        
+        .page-intro .intro-text {
+             font-size: 16px;
+            color: #2A120B; 
+            line-height: 1.5; 
+            font-weight: 400; /* Regular */
+            font-family: 'Pretendard', sans-serif; 
+            max-width: 650px; 
+            margin: 0 auto; 
+        }
+        
+        .column-table {
+            width: 100%; 
+            border-collapse: collapse; 
+        }
+        
+        .column-table td {
+            width: 33.33%; 
+            padding: 0 15px 40px 15px; 
+            vertical-align: top; 
+            text-align: left; 
+        }
+        
+        /* --- 카드 내부 스타일 --- */
+        .column-item {
+            border: 2px solid #776052;
+            border-radius: 20px; 
+            padding: 32px;
+            background: #fff;
+            min-height: 480px; 
+        }
+        
+        .column-item .column-number {
+            font-size: 40px;
+            font-weight: 400; 
+            color: #776052;
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        .column-item .column-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #000000;
+            margin-bottom: 5px;
+            line-height: 1.4; 
+        }
+        
+        .column-item .column-subtitle {
+            font-size: 16px;
+            font-weight: 400;
+            color: #2A120B;
+            margin-bottom: 15px;
+        }
+        
+        .column-item .column-divider {
+            height: 1px;
+            background-color: #eee;
+            margin-bottom: 15px;
+        }
+
+        .column-item .column-text {
+            font-size: 14px;
+            font-weight: 400;
+            color: #776052;
+            line-height: 1.7;
+            margin-bottom: 15px; 
+        }
+        
+        .column-item .column-text:last-of-type {
+            margin-bottom: 0;
+        }
+
+        /* 푸터 */
+        footer {
+            background-color: #2A120B; 
+            color: #fff;
+            padding: 60px 0; 
+        }
+
+        footer .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 5px;
+            display: block; 
+        }
+        
+        .footer-top-flex {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            margin-bottom: 30px; 
+        }
+        
+        footer .logo {
+            font-size: 32px;
+            margin-bottom: 0;
+            color: #9D8A7C; 
+            font-family: 'PP Editorial New', serif;
+            font-weight: normal;
+        }
+        
+        footer .main-nav ul {
+            display: flex;
+            gap: 25px;
+        }
+        
+        footer .main-nav a {
+            color: #9D8A7C;
+            font-size: 15.2px; 
+            transition: color 0.3s ease;
+            text-transform: capitalize;
+            font-family: 'Pretendard', sans-serif;
+            font-weight: 400; 
+        }
+        
+        footer .main-nav a:hover {
+            color: #fff;
+            font-weight: 700; 
+        }
+        
+        footer .footer-content p {
+            font-size: 14.4px;
+            line-height: 1.8;
+            color: #9D8A7C;
+            max-width: 600px;
+            text-align: left;
+            font-family: 'Pretendard', sans-serif;
+            font-weight: 400; 
+        }
+
+
+        footer .main-nav li {
+        color: #9D8A7C;
+        font-size: 15.2px;
+        font-family: 'Pretendard', sans-serif;
+        font-weight: 400;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo"><a href="index.html">The Daily Grind</a></h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="origin.html">Origin</a></li>
+                    <li><a href="roast-level.html">Roast Level</a></li> 
+                    <li><a href="flavor-note.html">Flavor Note</a></li>
+                    <li><a href="bean-column.html" class="active">Bean Column</a></li>
+                    <li><a href="brewing-guide.html">Brewing Guide</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="container">
+            
+            <div class="page-intro">
+                <h1>Bean Column</h1>
+                <p class="intro-text">완벽한 한 잔을 위한 커피 추출의 핵심 요소를 탐구합니다.</p>
+            </div>
+
+            <table class="column-table">
+                <tr>
+                    <td>
+                        <article class="column-item">
+                            <div class="column-number">01</div>
+                            <h3 class="column-title">쓴맛과 신맛<br>그 이상의 영역</h3>
+                            <h4 class="column-subtitle">커피 추출 수율, 완벽한 밸런스를 찾는 기술</h4>
+                            <div class="column-divider"></div>
+                            <p class="column-text">
+                                흔히 커피의 맛을 쓴맛과 신맛의 이분법으로만 판단하지만, 추출 수율은 그보다 넓은 과학이다. 추출 수율이란 원두에 담긴 전체 커피 성분 중 실제로 물에 녹아 나온 양을 의미한다.
+                            </p>
+                            <p class="column-text">
+                                바리스타는 원두의 특성과 추출 도구에 맞춰 분쇄 크기와 물의 온도를 미세하게 조절하고, 압력과 시간까지 제어한다. 이 모든 과정은 커피가 가진 수백 가지의 아로마와 플레이버를 단 하나의 잔 안에 완벽하게 구현하는, 분석적 기술이자 성공적인 추출을 보장하는 과학적 지표가 되는 것이다.
+                            </p>
+                        </article>
+                    </td>
+                    
+                    <td>
+                        <article class="column-item">
+                            <div class="column-number">02</div>
+                            <h3 class="column-title">보이지 않는 변수<br>물과 온도의 마법</h3>
+                            <h4 class="column-subtitle">추출의 퀄리티를 결정하는 핵심 요소</h4>
+                            <div class="column-divider"></div>
+                            <p class="column-text">
+                                완벽한 수율을 논할 때 원두만큼 중요한 것이 '물'이다. 물의 미네랄 함량은 커피의 산미와 바디감에 직접적인 영향을 미친다. 최적의 TDS를 찾는 것은 추출의 첫걸음이다.
+                            </p>
+                            <p class="column-text">
+                                물의 '온도'는 추출 속도를 제어하는 스로틀이다. 온도가 높을수록 성분은 빨리 녹아 나오지만, 자칫하면 불쾌한 쓴맛과 잡미가 과다하게 추출될 수 있다. 원두의 로스팅 레벨과 특성에 맞는 정확한 온도를 찾는 것이 중요하다.
+                            </p>
+                        </article>
+                    </td>
+
+                    <td>
+                        <article class="column-item">
+                            <div class="column-number">03</div>
+                            <h3 class="column-title">압력과 중력<br>추출 방식의 미학</h3>
+                            <h4 class="column-subtitle">도구가 만들어내는 맛의 스펙트럼</h4>
+                            <div class="column-divider"></div>
+                            <p class="column-text">
+                                에스프레소 머신은 높은 압력을 사용해 단 몇 초 만에 커피의 심장을 뽑아낸다. 이 짧은 순간에 정확한 수율을 맞추기 위해선, 분쇄도와 탬핑의 일관성이 생명이다.
+                            </p>
+                            <p class="column-text">
+                                반면, 핸드드립이나 브루잉은 중력을 이용해 천천히 성분을 녹여낸다. 바리스타는 물줄기의 속도와 푸어링 횟수를 조절하며 추출의 흐름을 디자인한다. 이 방식은 원두 본연의 섬세한 향미와 산미를 강조한다.
+                            </p>
+                        </article>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+<footer>
+        <div class="container">
+            <div class="footer-top-flex">
+                <h1 class="logo">The Daily Grind</h1>
+                <nav class="main-nav">
+                    <ul>
+                        <li>© 2025 The Daily Grind. All rights reserved.</li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="footer-content">
+                <p>The Daily Grind는 전 세계 커피 원두의 원산지별 특징, 로스팅 단계별 추출 가이드, <br>
+                    그리고 풍미에 대한 깊이 있는 정보를 제공합니다. 당신의 완벽한 한 잔을 위한 지식을 발견하세요.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

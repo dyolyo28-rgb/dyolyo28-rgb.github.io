@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Grind - Roast Level</title>
+    
+    <style>
+        /* 기본 설정 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Pretendard', 'Arial', sans-serif; 
+        }
+
+        body {
+            padding-top: 60px; 
+            background-color: #FFFFFF;
+            color: #333;
+            line-height: 1.6;
+
+             background-image:url(노랑.png);
+        background-size: cover;
+        margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 헤더 */
+         header {
+            background-color: #2A120B; 
+            color: #fff;
+            padding: 15px 0; 
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1300px; 
+            margin: 0 auto;
+            padding: 0 15px; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a{
+            font-size: 24px; 
+            font-weight: normal;
+            font-family: 'PP Editorial New', serif; 
+            letter-spacing: 1px;
+            color: #D4CABE; 
+        }
+
+        .main-nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        .main-nav a {
+            color: #9D8A7C; 
+            font-size: 15.2px; 
+            transition: color 0.3s ease;
+            text-transform: capitalize;
+            font-family: 'Pretendard', sans-serif;
+            font-weight: 700; 
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active { 
+            color: #fff; 
+        }
+
+        /* 메인 콘텐츠 */
+        .page-content {
+            padding: 80px 0;
+            min-height: 70vh; 
+        }
+        
+        .page-content .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 5px; /* 헤더와 동일하게 */
+            display: block; 
+        }
+
+        /* Roast Level 페이지 전용 */
+        .roast-layout-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .roast-layout-table td {
+            vertical-align: top; 
+        }
+
+        /* 왼쪽 제목 영역 */
+        .roast-title-cell {
+            width: 50%; 
+            padding-right: 40px; 
+        }
+        
+        .roast-title-cell h1 {
+            font-family: 'Pretendard', sans-serif; 
+            font-weight: 700; 
+            font-size: 72px; 
+            line-height: 1.2; 
+            color: #000000; 
+            margin-bottom: 20px;
+        }
+        
+        .roast-title-cell .subtitle {
+            font-family: 'Pretendard', sans-serif;
+            font-size: 16px; 
+            line-height: 1.5; 
+            color: #2A120B; 
+        }
+        
+        .roast-title-cell .subtitle-line1 {
+            font-weight: 700;
+        }
+        
+        .roast-title-cell .subtitle-line2 {
+            font-weight: 400;
+        }
+
+        /* 그라데이션 구분선 */
+        .divider-cell {
+            width: 15px; 
+            background: linear-gradient(180deg, #C4B6AD 0%, #523F31 100%); 
+        }
+
+        /* 오른쪽 설명 영역 */
+        .roast-content-cell {
+            width: 50%; 
+            padding-left: 50px; 
+        }
+
+        /* 각 로스팅 단계 아이템 */
+        .roast-item {
+            margin-bottom: 40px; 
+            padding-bottom: 40px; 
+            border-bottom: 1px solid #eee; 
+        }
+        
+        .roast-layout-table tr:last-child .roast-item:last-child {
+             border-bottom: none;
+             padding-bottom: 0;
+             margin-bottom: 0;
+        }
+
+        .roast-item h3 {
+            font-size: 20px; 
+            margin-bottom: 5px;
+            font-weight: normal; 
+            color: #222; 
+        }
+        
+        .roast-item .en-title {
+            font-family: 'Pretendard', sans-serif; 
+            font-weight: 700; 
+            font-size: 20px;
+            color: #222; 
+        }
+
+        .roast-item .ko-title {
+            font-family: 'Pretendard', sans-serif; 
+            font-weight: 700;
+            font-size: 18px; 
+            color: #776052; 
+            margin-left: 5px;
+        }
+        
+        .roast-item p {
+            font-family: 'Pretendard', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px; 
+            line-height: 1.8; 
+            color: #776052; 
+            margin-top: 10px;
+        }
+
+        /* 푸터 */
+        footer {
+            background-color: #2A120B; 
+            color: #fff;
+            padding: 60px 0; 
+        }
+
+        footer .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 5px; /* 헤더와 동일하게 */
+            display: block; 
+        }
+        
+        .footer-top-flex {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            margin-bottom: 30px; 
+        }
+        
+        footer .logo {
+            font-size: 32px; 
+            margin-bottom: 0;
+            color: #9D8A7C; 
+            font-family: 'PP Editorial New', serif;
+            font-weight: normal;
+        }
+        
+        footer .main-nav ul {
+            display: flex;
+            gap: 25px;
+        }
+        
+        footer .main-nav a {
+            color: #9D8A7C;
+            font-size: 15.2px; 
+            transition: color 0.3s ease;
+            text-transform: capitalize;
+            font-family: 'Pretendard', sans-serif;
+            font-weight: 400; 
+        }
+
+        footer .main-nav a:hover {
+            color: #fff;
+            font-weight: 700; 
+        }
+        
+        footer .footer-content p {
+            font-size: 14.4px;
+            line-height: 1.8;
+            color: #9D8A7C;
+            max-width: 600px;
+            text-align: left;
+            font-family: 'Pretendard', sans-serif;
+            font-weight: 400; 
+        }
+
+        footer .main-nav li {
+        color: #9D8A7C;
+        font-size: 15.2px;
+        font-family: 'Pretendard', sans-serif;
+        font-weight: 400;
+         }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo"><a href="index.html">The Daily Grind</a></h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="origin.html">Origin</a></li>
+                    <li><a href="roast-level.html" class="active">Roast Level</a></li> 
+                    <li><a href="flavor-note.html">Flavor Note</a></li>
+                    <li><a href="bean-column.html">Bean Column</a></li>
+                    <li><a href="brewing-guide.html">Brewing Guide</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="container">
+            
+            <table class="roast-layout-table">
+                <tr>
+                    <td class="roast-title-cell">
+                        <h1>Roast Level</h1>
+                        <p class="subtitle">
+                            <span class="subtitle-line1">산미와 쓴맛의 스펙트럼:</span><br>
+                            <span class="subtitle-line2">커피의 잠재력을 깨우는 8단계 로스팅 과정</span>
+                        </p>
+                    </td>
+                    
+                    <td class="divider-cell">
+                        &nbsp; 
+                    </td>
+
+                    <td class="roast-content-cell">
+                        
+                        <div class="roast-item">
+                            <h3>
+                                <span class="en-title">Light Roast</span>
+                                <span class="ko-title">(라이트 로스트)</span>
+                            </h3>
+                            <p>생두 본연의 특성과 강한 산미가 지배적이다.<br> 콩의 수분만 제거된 단계로, 풋내가 남을 수 있으며 단맛과 쓴맛은 거의 발현되지 않는다.</p>
+                        </div>
+                        
+                        <div class="roast-item">
+                            <h3>
+                                <span class="en-title">Cinnamon Roast</span>
+                                <span class="ko-title">(시나몬 로스트)</span>
+                            </h3>
+                            <p>산미가 최고조에 달하며, 원두의 개성이 두드러진다.<br> 1차 크랙이 시작되는 시점으로 밝은 갈색을 띠며 과일류의 산뜻한 향미가 활성화된다.</p>
+                        </div>
+
+                        <div class="roast-item">
+                            <h3>
+                                <span class="en-title">Medium Roast</span>
+                                <span class="ko-title">(미디엄 로스트)</span>
+                            </h3>
+                            <p>산미와 단맛의 균형이 형성되기 시작하는 표준 단계이다.<br> 신맛이 부드러워지고 커피의 향미 성분이 본격적으로 발현되어 마일드 커피에 적합하다.</p>
+                        </div>
+
+                        <div class="roast-item">
+                            <h3>
+                                <span class="en-title">High Roast</span>
+                                <span class="ko-title">(하이 로스트)</span>
+                            </h3>
+                            <p>신맛이 약화되고 단맛이 강조되는, 깔끔하고 부드러운 단계이다.<br> 향미가 풍부하게 살아나며 일반적으로 핸드드립용 원두로 가장 선호되는 배전도이다.</p>
+                        </div>
+
+                        <div class="roast-item">
+                            <h3>
+                                <span class="en-title">City Roast</span>
+                                <span class="ko-title">(시티 로스트)</span>
+                            </h3>
+                            <p>산미와 쓴맛, 단맛의 밸런스가 가장 이상적인 표준 배전도이다.<br> 2차 크랙 직전 또는 초기에 해당하며 풍부한 바디감과 함께 조화로운 풍미를 제공한다.</p>
+                        </div>
+
+                        <div class="roast-item">
+                            <h3>
+                                <span class="en-title">Full City Roast</span>
+                                <span class="ko-title">(풀 시티 로스트)</span>
+                            </h3>
+                            <p>산미는 거의 사라지고, 쓴맛과 단맛이 강조된다.<br> 2차 크랙이 진행되는 단계로 표면에 오일이 비치기 시작하며 에스프레소 베이스 커피에 주로 사용된다.</p>
+                        </div>
+
+                        <div class="roast-item">
+                            <h3>
+                                <span class="en-title">French Roast</span>
+                                <span class="ko-title">(프렌치 로스트)</span>
+                            </h3>
+                            <p>쓴맛이 매우 강하며, 표면에 오일이 돌기 시작한다.<br> 스모키한 향미와 강한 바디감이 특징이며 아이스 커피나 우유를 첨가하는 베리에이션 메뉴에 적합하다.</p>
+                        </div>
+
+                        <div class="roast-item">
+                            <h3>
+                                <span class="en-title">Italian Roast</span>
+                                <span class="ko-title">(이탈리안 로스트)</span>
+                            </h3>
+                            <p>극도로 강한 쓴맛과 숯과 같은 풍미를 지닌 가장 어두운 단계이다.<br> 콩이 검은색에 가까워지며 에스프레소 추출 시 진하고 강력한 바디감을 목적으로 한다.</p>
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </main>
+
+ <footer>
+        <div class="container">
+            <div class="footer-top-flex">
+                <h1 class="logo">The Daily Grind</h1>
+                <nav class="main-nav">
+                    <ul>
+                        <li>© 2025 The Daily Grind. All rights reserved.</li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="footer-content">
+                <p>The Daily Grind는 전 세계 커피 원두의 원산지별 특징, 로스팅 단계별 추출 가이드, <br>
+                    그리고 풍미에 대한 깊이 있는 정보를 제공합니다. 당신의 완벽한 한 잔을 위한 지식을 발견하세요.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
